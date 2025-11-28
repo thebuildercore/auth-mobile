@@ -15,6 +15,4 @@ target/
 # Logs
 *.log
 
-# Sensitive Config (replace with environment vars)
-# Note: If you use application.yml, ONLY commit the structure, 
-# not the actual secret values.
+
