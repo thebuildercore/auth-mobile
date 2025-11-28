@@ -51,7 +51,7 @@ This microservice provides authentication and authorization for the platform. It
 * Stores user profiles, hashed passwords, refresh tokens, session states
 * Can run as independent container in Docker/Kubernetes
 
-### 3. Redis 
+### 3. Redis (To be added)
 
 Used for:
 
@@ -59,7 +59,7 @@ Used for:
 * Rate limiting (login attempts, brute-force protection)
 * Temporary OTP codes / email verification codes
 
-### 4. Kafka 
+### 4. Kafka (To be added)
 
 Used when authentication events need to be broadcast to the entire ecosystem:
 
@@ -69,7 +69,7 @@ Used when authentication events need to be broadcast to the entire ecosystem:
 
 This decouples the auth service from the rest of the system.
 
-### 5. Kubernetes Deployment
+### 5. Kubernetes Deployment (To be added)
 
 Kubernetes is used for:
 
