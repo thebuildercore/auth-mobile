@@ -40,6 +40,22 @@ This microservice provides authentication and authorization for the platform. It
 
 ## Components
 
+## Project Layout
+
+```
+api-gateway/
+├── src/main/java/com/decommerce/apigateway/
+│   ├── ApiGatewayApplication.java     # Main Spring Boot starter
+│   └── filter/
+│       └── AuthenticationFilter.java  # Custom filter to intercept requests
+│   └── util/
+│       └── JwtUtil.java               # JWT validation logic (solves the Jwts.parserBuilder issue)
+├── src/main/resources/
+│   └── application.yml                # Configuration (Eureka registration, JWT secret, Routes)
+├── pom.xml                            # Maven dependencies and build configuration
+└── .mvnw (mvnw.cmd)                   # Maven Wrapper scripts
+```
+
 ### 1. API Layer
 
 * Built using Node.js/Express or Fastify
@@ -103,41 +119,7 @@ Example Components:
 * `POST /auth/logout` – revoke refresh token
 * `GET /auth/me` – fetch authenticated profile
 
-## Event Streams (Kafka)
-
-* `auth.user_created`
-* `auth.user_logged_in`
-* `auth.password_changed`
-
 These streams allow other microservices to stay eventually consistent.
-
-## Environment Variables
-
-```
-POSTGRES_URL=
-REDIS_URL=
-JWT_SECRET=
-JWT_EXPIRY=
-REFRESH_SECRET=
-REFRESH_EXPIRY=
-KAFKA_BROKER=
-```
-
-## Project Layout
-
-```
-api-gateway/
-├── src/main/java/com/decommerce/apigateway/
-│   ├── ApiGatewayApplication.java     # Main Spring Boot starter
-│   └── filter/
-│       └── AuthenticationFilter.java  # Custom filter to intercept requests
-│   └── util/
-│       └── JwtUtil.java               # JWT validation logic (solves the Jwts.parserBuilder issue)
-├── src/main/resources/
-│   └── application.yml                # Configuration (Eureka registration, JWT secret, Routes)
-├── pom.xml                            # Maven dependencies and build configuration
-└── .mvnw (mvnw.cmd)                   # Maven Wrapper scripts
-```
 
 ## Scaling Strategy
 
