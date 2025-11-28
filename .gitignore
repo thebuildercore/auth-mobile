@@ -1,0 +1,20 @@
+# Build Artifacts
+target/
+
+# Package files
+*.jar
+*.war
+*.zip
+*.tar.gz
+
+# IDE and OS Files
+.idea/
+.vscode/
+.DS_Store
+
+# Logs
+*.log
+
+# Sensitive Config (replace with environment vars)
+# Note: If you use application.yml, ONLY commit the structure, 
+# not the actual secret values.
